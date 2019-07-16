@@ -38,7 +38,7 @@ public class Snipper {
 				if(Snipper.filter(lines.get(j), filter)) {
 					String snippetFileName = String.format("%s-%d.%s", FilenameUtils.getBaseName(files[i].getName()), j,
 							FilenameUtils.getExtension(files[i].getName()));
-					String snippetFilePath = String.format("%s\\%s", targetDir.getAbsolutePath(), snippetFileName);
+					String snippetFilePath = String.format("%s/%s", targetDir.getAbsolutePath(), snippetFileName);
 					IOUtils.write(Snipper.modify(lines.get(j)), new FileOutputStream(snippetFilePath), "utf-8");
 					System.out.format("extracted %s %n", snippetFilePath);
 				}
