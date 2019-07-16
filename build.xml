@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="install" default="install" basedir=".">
+
+<property name="install-dir" value="c:/utilities/javatools/snipper"/>
+<property name="javatools-dir" value="c:/utilities/javatools"/>
+<property name="resource-dir" value="./src/main/resources"/>
+<property name="cmdfile-path" value="c:/utilities/javatools/snipper.bat"/>
+<property name="target-dir" value="./target"/>
+
+<target name="cleanup">
+	
+</target>
+
+<target name="install" depends="cleanup">
+	<copy todir="${install-dir}" overwrite="true">
+		<fileset dir="${target-dir}">
+			<include name="*.jar"/>
+			<include name="libs/"/>
+			<include name="${resource-dir}/"/>
+		</fileset>	
+	</copy>
+	<copy file="snipper.bat" todir="${javatools-dir}"/>
+	
+</target>
+
+</project>
