@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="install" default="install" basedir=".">
+<project name="utils" default="deploy" basedir=".">
 
-<property name="install-dir" value="c:/utilities/javatools/snipper"/>
-<property name="javatools-dir" value="c:/utilities/javatools"/>
-<property name="resource-dir" value="./src/main/resources"/>
-<property name="cmdfile-path" value="c:/utilities/javatools/snipper.bat"/>
-<property name="target-dir" value="./target"/>
+<property name="install-dir" value="/var/jenkins_home/javatools.repo"/>
+<property name="proj-resource-dir" value="./src/main/resources"/>
+<property name="proj-target-dir" value="./target"/>
 
 <target name="cleanup">
 	
 </target>
 
-<target name="install" depends="cleanup">
-	<copy todir="${install-dir}" overwrite="true">
-		<fileset dir="${target-dir}">
-			<include name="*.jar"/>
-			<include name="libs/"/>
-			<include name="${resource-dir}/"/>
-		</fileset>	
-	</copy>
-	<copy file="snipper.bat" todir="${javatools-dir}"/>
-	
+<target name="deploy" depends="cleanup">	
+	<zip destfile="${install-dir}/snipper-${version}.zip">
+		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="*.jar"/>
+		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="libs/"/>
+		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="${proj-resource-dir}/"/>
+		<zipfileset dir="${proj-target-dir}" includes="snipper.bat"/>		
+	</zip>
 </target>
 
 </project>
