@@ -1,1 +1,1 @@
-java -jar c:\utilities\javatools\snipper\utils-0.1.jar %*
+java -jar c:\utilities\javatools\snipper\util-0.1.jar %*

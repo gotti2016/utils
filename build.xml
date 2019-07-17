@@ -13,7 +13,7 @@
 	<zip destfile="${install-dir}/snipper-${version}.zip" update="true">
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="*.jar"/>
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="libs/"/>
-		<zipfileset dir="${proj-resource-dir}" includes="*.*"/>
+		<zipfileset dir="${proj-resource-dir}" prefix="snipper" includes="*.*"/>
 		<zipfileset dir="." includes="snipper.bat"/>		
 	</zip>
 </target>
