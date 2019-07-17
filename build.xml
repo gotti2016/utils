@@ -6,7 +6,7 @@
 <property name="proj-target-dir" value="./target"/>
 
 <target name="cleanup">
-	
+	<delete file="${install-dir}/snipper-${version}.zip"/>
 </target>
 
 <target name="deploy" depends="cleanup">	
