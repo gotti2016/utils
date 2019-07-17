@@ -10,7 +10,7 @@
 </target>
 
 <target name="deploy" depends="cleanup">	
-	<zip destfile="${install-dir}/snipper-${version}.zip">
+	<zip destfile="${install-dir}/snipper-${version}.zip" update="true">
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="*.jar"/>
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="libs/"/>
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="${proj-resource-dir}/*"/>
