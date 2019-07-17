@@ -14,7 +14,7 @@
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="*.jar"/>
 		<zipfileset dir="${proj-target-dir}" prefix="snipper" includes="libs/"/>
 		<zipfileset dir="${proj-resource-dir}" includes="*.*"/>
-		<zipfileset dir="${proj-target-dir}" includes="snipper.bat"/>		
+		<zipfileset dir="." includes="snipper.bat"/>		
 	</zip>
 </target>
 
